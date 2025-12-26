@@ -1,0 +1,160 @@
+@charset "utf-8";
+
+body {
+  background-color: #222
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.topImges {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.topImg {
+  height: 500px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+h1 {
+  color: #fff;
+  font-size: clamp(1.3rem, calc(90/2000*100vw), 2rem);
+
+  position: absolute;
+  left: calc(30/2000*100vw);
+  bottom: calc(150/2000*100vh);
+}
+
+h2 {
+  color: #fff;
+  text-align: center;
+  margin: 30px;
+}
+
+.bodyWrap {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 90%;
+}
+
+p {
+  color: white;
+  margin: 40px 20px;
+  text-align: center;
+}
+
+.catImg {
+  display: flex;
+  justify-content: center;
+  background-color: #222;
+  gap: 70px;
+
+}
+
+/****** 猫選択欄 ***********/
+
+
+.blackCat.active,
+.brownCat.active,
+.whiteCat.active {
+  display: none;
+}
+
+/* 
+#black:checked~.cats .blackCat.active,
+#brown:checked~.cats .brownCat.active,
+#white:checked~.cats .whiteCat.active {
+  display: block;
+}
+
+#black:checked~.cats .blackCat.normal,
+#brown:checked~.cats .brownCat.normal,
+#white:checked~.cats .whiteCat.normal {
+  display: none;
+} */
+
+.selectCats {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  color: #fff;
+}
+
+.selectCats img {
+
+  margin: 50px 0;
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+
+.selectCats label {
+  padding: 5px;
+  margin: 10px;
+}
+
+
+.selectCats label:hover {
+  transform: translateY(-1px);
+  color: #999;
+}
+
+.selectCats input[type="radio"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.selectCats input[type="radio"]:checked+label {
+  color: #b83c3c;
+  font-weight: bold;
+}
+
+/************ ボタン部分装飾 ******/
+
+.font {
+  color: #fff;
+  text-align: center;
+}
+
+.button {
+  display: block;
+  text-align: center;
+}
+
+.buttonFont {
+  display: inline-block;
+  justify-content: center;
+  color: blue;
+  background-color: blanchedalmond;
+  margin: 40px;
+}
+
+/****** API表示 *******/
+
+.apiCatWrap {
+  display: grid;
+  place-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+#apiCatImg {
+  width: min(600px, 90%);
+  height: 300px;
+  border-radius: 10px;
+  display: none;
+}
+
+.apiStatus {
+  color: #fff;
+  margin: 0;
+  text-align: center;
+  opacity: 0.9;
+}
