@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/reset.css">
@@ -8,9 +7,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Sawarabi+Mincho&display=swap">
     <link rel="stylesheet" href="css/style.css">
-    <script src="./js/main.js" defer>
-
-    </script>
+    <script type="module" src="./js/main.js"></script>
     <title>本日のMVP</title>
 </head>
 
@@ -24,20 +21,50 @@
         </header>
         <main class="main">
             <h2>あなたの推し猫は！？</h2>
-            <section class="selectCats">
-                <input type="radio" name="attend" value="黒猫" id="black" checked>
-                <label for="black">黒猫</label>
-                <input type="radio" name="attend" value="茶猫" id="brown">
-                <label for="brown">茶猫</label>
-                <input type="radio" name="attend" value="白猫" id="white">
-                <label for="white">白猫</label>
-                <img class="blackCat normal" src="./image/blackCat/brackCat_1.webp" alt="黒猫の写真">
-                <img class="blackCat active" src="#" alt="黒猫の写真">
-                <img class="brownCat normal" src="./image/brownCat/brownCat_1.webp" alt="茶猫の画像">
-                <img class="brownCat active" src="#" alt="茶猫の画像">
-                <img class="whiteCat normal" src="./image/whiteCat/whiteCat.webp" alt="白猫の画像">
-                <img class="whiteCat active" src="#" alt="白猫の画像">
-            </section>
+<section class="selectCats" id="selectCats">
+
+<div class="catBlock">
+    <label class="breedLabel">
+    <input type="radio" name="attend"
+        data-breed-id="rblu"
+        data-img="#rbluCatApi"
+        data-status="#rbluApiStatus">
+    ロシアンブルー部門
+    </label>
+
+    <img class="thumb" src="./image/blackCat/brackCat_1.webp" alt="ロシアンブルー">
+    <img class="apiImg" id="rbluCatApi" alt="API ロシアンブルー">
+    <p class="apiStatus" id="rbluApiStatus"></p>
+</div>
+
+<div class="catBlock">
+    <label class="breedLabel">
+<input type="radio" name="attend"
+        data-breed-id="abys"
+        data-img="#abysCatApi"
+        data-status="#abysApiStatus">
+    アビシニアン部門
+    </label>
+
+    <img class="thumb" src="./image/brownCat/brownCat_1.webp" alt="アビシニアン">
+    <img class="apiImg" id="abysCatApi" alt="API アビシニアン">
+    <p class="apiStatus" id="abysApiStatus"></p>
+</div>
+
+<div class="catBlock">
+    <label class="breedLabel">
+    <input type="radio" name="attend"
+        data-breed-id="ragd"
+        data-img="#ragdCatApi"
+        data-status="#ragdApiStatus">
+    ラグドール部門
+    </label>
+
+    <img class="thumb" src="./image/whiteCat/whiteCat.webp" alt="ラグドール">
+    <img class="apiImg" id="ragdCatApi" alt="API ラグドール">
+    <p class="apiStatus" id="ragdApiStatus"></p>
+</div>
+</section>
             <section class="msg">
 
                 <p class="line1">今日もにゃんこたちは元気に狩りをしている！</p>
@@ -45,9 +72,8 @@
             </section>
             <section class="button">
                 <h3>
-                    <div class="buttonFont"><button id="myBtn" type="button">本日のMVP</button></div>
+                    <div class="buttonFont"><button id="myBtn" type="button">MVPにゃんこ</button></div>
                 </h3>
-                <div class="font">結果</div>
                 <div class="apiCatWrap">
                     <img id="apiCatImg" alt="TheCatAPIから取得した猫" />
                     <p id="apiStatus" class="apiStatus"></p>

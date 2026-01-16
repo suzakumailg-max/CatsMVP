@@ -66,7 +66,7 @@ p {
   display: none;
 }
 
-/* 
+/*
 #black:checked~.cats .blackCat.active,
 #brown:checked~.cats .brownCat.active,
 #white:checked~.cats .whiteCat.active {
@@ -81,12 +81,25 @@ p {
 
 .selectCats {
   display: grid;
-  place-items: center;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto);
+grid-template-columns: repeat(3, 1fr);
   color: #fff;
 }
 
+
+.catBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.catBlock img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.selectCats img.apiImg {
+  display: none;
+}
 .selectCats img {
 
   margin: 50px 0;
@@ -94,7 +107,6 @@ p {
   width: 80px;
   height: 80px;
 }
-
 .selectCats label {
   padding: 5px;
   margin: 10px;
@@ -106,16 +118,16 @@ p {
   color: #999;
 }
 
+
 .selectCats input[type="radio"] {
   position: absolute;
   left: -9999px;
 }
 
-.selectCats input[type="radio"]:checked+label {
+.selectCats label:has(input[type="radio"]:checked) {
   color: #b83c3c;
   font-weight: bold;
 }
-
 /************ ボタン部分装飾 ******/
 
 .font {
@@ -146,7 +158,8 @@ p {
 }
 
 #apiCatImg {
-  width: min(600px, 90%);
+  object-fit: cover;
+  width: 300px;
   height: 300px;
   border-radius: 10px;
   display: none;
